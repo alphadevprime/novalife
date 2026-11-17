@@ -1,0 +1,10 @@
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^(?:\.git|\.claude|\.expo|node_modules|backend|database)(?:/|$) - [F,L,NC]
+</IfModule>
+
+<FilesMatch "(?i)(^\.|.*\.(?:sql|bak|log|ini|conf|ya?ml))$">
+  Require all denied
+</FilesMatch>
